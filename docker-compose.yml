@@ -1,0 +1,21 @@
+version: '3'
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - '80:80'
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/nginx.conf
+      - ./app:/app
+    depends_on:
+      - app
+
+  app:
+    build:
+      context: .
+      dockerfile: PHP.Dockerfile
+    environment:
+      - UID_GID=1000:1000
+    user: '${UID_GID}'
+    volumes:
+      - ./app:/app
