@@ -14,7 +14,7 @@ git clone https://github.com/tapsu01/php-docker-compose.git
 mkdir app
 ```
 
-3. Put php code to folder `app/public`
+3. Put `index` file to folder `app/public`
 
 Ex with Laravel:
 
