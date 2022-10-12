@@ -1,4 +1,4 @@
-# Development PHP application with docker, docker-compose
+# Develop PHP application with docker, docker-compose
 
 ## How to
 
