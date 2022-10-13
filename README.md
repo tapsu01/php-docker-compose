@@ -29,3 +29,23 @@ docker-compose up
 ```
 
 5. Verify project running on [127.0.0.1](127.0.0.1)
+
+## Command line for Laravel
+
+1. Install dependencies
+
+```sh
+docker exec -it {container_name} composer -d {path/to/project} install
+```
+
+2. Generate key
+
+```sh
+docker exec -it {container_name} php {path/to/project} key:generate
+```
+
+3. Require module
+
+```sh
+docker exect -it {container_name} composer -d {path/to/project} require {module_name}
+```
