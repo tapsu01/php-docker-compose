@@ -16,3 +16,5 @@ RUN docker-php-ext-install pdo pdo_mysql
 RUN apk add --no-cache pcre-dev $PHPIZE_DEPS && pecl install redis && docker-php-ext-enable redis.so
 RUN pecl install mongodb-1.12.1
 RUN echo "extension=mongodb.so" >> /usr/local/etc/php/conf.d/mongodb.ini
+
+RUN apk add --update imagemagick-dev && pecl install imagick && docker-php-ext-enable imagick
