@@ -3,6 +3,7 @@ FROM php:fpm-alpine
 WORKDIR /app
 
 RUN apk add curl-dev openssl openssl-dev
+RUN apk add --update nodejs npm
 
 # Install Composer
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
