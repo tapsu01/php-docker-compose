@@ -8,13 +8,21 @@
 git clone https://github.com/tapsu01/php-docker-compose.git
 ```
 
-2. Create folder with name `app`
+2. Create folder with name:
+
+- Laravel
 
 ```sh
 mkdir app
 ```
 
-3. Put `index` file to folder `app/public`
+- Wordpress
+
+```sh
+mkdir wordpress
+```
+
+3. Pull source code to folder
 
 Ex with Laravel:
 
@@ -24,8 +32,16 @@ git clone https://github.com/laravel/laravel.git ./app
 
 4. Run project
 
+- Laravel
+
 ```sh
-docker-compose up
+docker-compose -f LARAVEL.docker-compose.yml up
+```
+
+- Wordpress
+
+```sh
+docker-compose -f WP.docker-compose.yml up
 ```
 
 5. Verify project running on [127.0.0.1](127.0.0.1)

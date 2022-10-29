@@ -1,0 +1,29 @@
+version: '3'
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - '80:80'
+    volumes:
+      - ./nginx/wordpress/nginx.conf:/etc/nginx/conf.d/nginx.conf
+      - ./wordpress:/app
+    depends_on:
+      - wordpress
+    networks:
+      - persistent-stack_common
+
+  wordpress:
+    build:
+      context: ./docker
+      dockerfile: WP.Dockerfile
+    environment:
+      - UID_GID=1000:1000
+    user: '${UID_GID}'
+    volumes:
+      - ./wordpress:/app
+    networks:
+      - persistent-stack_common
+
+networks:
+  persistent-stack_common:
+    external: true
