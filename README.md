@@ -46,7 +46,13 @@ docker-compose -f WP.docker-compose.yml up
 
 5. Verify project running on [127.0.0.1](127.0.0.1)
 
-## Command line for Laravel
+## Command line
+
+```sh
+# Syntax: docker-compose run --rm <service-name> <command>
+```
+
+### Laravel
 
 1. Install dependencies
 
